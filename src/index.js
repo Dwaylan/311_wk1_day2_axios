@@ -22,8 +22,9 @@ const getMovieByIdFailure = () => {
   const fakeId = 5873; // FAKE ID HERE
   const url = `https://api.themoviedb.org/3/movie/${fakeId}?api_key=${api_key}`;
   // code here
-
-  return axios(url).then((res) => console.logres.data.status);
+  return axios(url)
+    .then((res) => res)
+    .catch((error) => error.response.status);
 };
 
 module.exports = {
